@@ -2,6 +2,7 @@ import pandas as pd
 from .utils import load_urls, format_uniprot_mapping_request, load_columns
 from typing import List
 import urllib
+import warnings
 from tqdm.auto import tqdm
 
 def get_phenotype_annotations()->pd.DataFrame:
@@ -21,6 +22,13 @@ def map_geneid_to_uniprot(gene_ids:List)->pd.DataFrame:
 
     with urllib.request.urlopen(req) as f:
         df = pd.read_csv(f, sep="\t")
+
+    unmapped_genes = set(gene_ids) - set(df["From"])
+
+    if unmapped_genes:
+        warnings.warn("Unable to map {number} gene_ids to uniprot!".format(
+            number=len(unmapped_genes)
+        ))
 
     df.columns = [
         "entrez-gene-id",

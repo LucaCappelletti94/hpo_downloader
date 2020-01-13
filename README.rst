@@ -18,7 +18,50 @@ Since some software handling coverages sometime get slightly different results, 
 
 |coveralls| |sonar_coverage| |code_climate_coverage|
 
-Python package to download HPO annotations
+
+Usage examples
+-----------------------------------------------
+The library offers mainly two methods:
+
+Map HPO ids to Uniprot ids
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+To map the available HPO ids to Uniprot Ids (**when possible, not all geneIds used in HPO map to Uniprot Ids**) use the following method:
+
+.. code:: python
+
+    from hpo_downloader import map_phenotype_to_uniprot
+    phenotype_to_uniprot = map_phenotype_to_uniprot()
+
+The resulting dataframe will look like this:
+
++---------------+---------------+
+| Uniprot\_ID   | HPO-Term-ID   |
++===============+===============+
+| A2MG\_HUMAN   | HP:0410054    |
++---------------+---------------+
+| A2MG\_HUMAN   | HP:0001425    |
++---------------+---------------+
+| A2MG\_HUMAN   | HP:0001300    |
++---------------+---------------+
+| A2MG\_HUMAN   | HP:0000006    |
++---------------+---------------+
+| A2MG\_HUMAN   | HP:0000726    |
++---------------+---------------+
+| A2MG\_HUMAN   | HP:0002423    |
++---------------+---------------+
+| A2MG\_HUMAN   | HP:0002185    |
++---------------+---------------+
+
+
+Download HPO Phenotype annotations
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+To download the phenotype annotations you can use the following method:
+
+.. code:: python
+
+    from hpo_downloader import get_phenotype_annotations
+    
+    get_phenotype_annotations()
 
 
 .. |travis| image:: https://travis-ci.org/LucaCappelletti94/hpo_downloader.png
@@ -41,12 +84,12 @@ Python package to download HPO annotations
     :target: https://coveralls.io/github/LucaCappelletti94/hpo_downloader?branch=master
     :alt: Coveralls Coverage
 
-.. |pip| image:: https://badge.fury.io/py/hpo_downloader.svg
-    :target: https://badge.fury.io/py/hpo_downloader
+.. |pip| image:: https://badge.fury.io/py/hpo-downloader.svg
+    :target: https://badge.fury.io/py/hpo-downloader
     :alt: Pypi project
 
-.. |downloads| image:: https://pepy.tech/badge/hpo_downloader
-    :target: https://pepy.tech/badge/hpo_downloader
+.. |downloads| image:: https://pepy.tech/badge/hpo-downloader
+    :target: https://pepy.tech/badge/hpo-downloader
     :alt: Pypi total project downloads 
 
 .. |codacy|  image:: https://api.codacy.com/project/badge/Grade/26d152932db342a09ac6b009889255c9
