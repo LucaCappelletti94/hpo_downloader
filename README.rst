@@ -34,6 +34,10 @@ To map the available HPO ids to Uniprot Ids (**when possible, not all geneIds us
         cafa4_only=False # To not filter for uniprot_ids present only in CAFA4
     )
 
+    phenotype_to_uniprot_cafa4_only = map_phenotype_to_uniprot(
+        cafa4_only=True # To filter for uniprot_ids present only in CAFA4
+    )
+
 The resulting dataframe will look like this:
 
 +---------------+---------------+
@@ -54,8 +58,12 @@ The resulting dataframe will look like this:
 | A2MG\_HUMAN   | HP:0002185    |
 +---------------+---------------+
 
-The last version of the mapping is available `here <https://raw.githubusercontent.com/LucaCappelletti94/hpo_downloader/master/phenotype_to_uniprot.tab>`_ in tab format.
+The last version with all the mapping is available `here <https://raw.githubusercontent.com/LucaCappelletti94/hpo_downloader/master/phenotype_to_uniprot.tab>`_ in tab format.
+Similarly, the CAFA4 only mapping is available `here <https://raw.githubusercontent.com/LucaCappelletti94/hpo_downloader/master/phenotype_to_uniprot_cafa4_only.tab>`_ in tab format.
 
+**N.B.: CURRENTLY 55 gene IDs (1.28% of total) are not mapped by uniprot to curresponding uniprot IDs**
+
+**N.B.: CURRENTLY 16187 CAFA4 Uniprot_Ids (79.23% of total) are not mapped by uniprot to curresponding HPO IDs**
 
 Download HPO Phenotype annotations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -85,6 +93,42 @@ The resulting dataframe will look like this:
 | DECIPHER   | 14               | Prader-Willi syndrome (Type 1)   |             | HP:0001249   | DECIPHER:14     | IEA              |                  |             |       | P          | PRADER-WILLI SYNDROME (TYPE 1)   | HPO:skoehler[2013-05-29]   |                |
 +------------+------------------+----------------------------------+-------------+--------------+-----------------+------------------+------------------+-------------+-------+------------+----------------------------------+----------------------------+----------------+
 
+
+Download CAFA4 Ids
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+To download the CAFA4 and Uniprot Ids mapping use the following method:
+
+.. code:: python
+
+    from hpo_downloader import load_cafa4_uniprot_ids
+
+    cafa_mapping = load_cafa4_uniprot_ids()
+
+The resulting dataframe will look like this:
+
++----------------+----------------+
+| CAFA\_Id       | Uniprot\_Id    |
++================+================+
+| T96060000001   | 1433B\_HUMAN   |
++----------------+----------------+
+| T96060000002   | 1433E\_HUMAN   |
++----------------+----------------+
+| T96060000003   | 1433F\_HUMAN   |
++----------------+----------------+
+| T96060000004   | 1433G\_HUMAN   |
++----------------+----------------+
+| T96060000005   | 1433S\_HUMAN   |
++----------------+----------------+
+| T96060000006   | 1433T\_HUMAN   |
++----------------+----------------+
+| T96060000007   | 1433Z\_HUMAN   |
++----------------+----------------+
+| T96060000008   | 1A01\_HUMAN    |
++----------------+----------------+
+| T96060000009   | 1A02\_HUMAN    |
++----------------+----------------+
+| T96060000010   | 1A03\_HUMAN    |
++----------------+----------------+
 
 
 .. |travis| image:: https://travis-ci.org/LucaCappelletti94/hpo_downloader.png
