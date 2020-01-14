@@ -9,6 +9,9 @@ hpo_downloader.egg-info/SOURCES.txt
 hpo_downloader.egg-info/dependency_links.txt
 hpo_downloader.egg-info/requires.txt
 hpo_downloader.egg-info/top_level.txt
+hpo_downloader/data/columns.json
+hpo_downloader/data/paths.json
+hpo_downloader/data/urls.json
 hpo_downloader/utils/__init__.py
 hpo_downloader/utils/format_uniprot_mapping_request.py
 hpo_downloader/utils/load_data.py

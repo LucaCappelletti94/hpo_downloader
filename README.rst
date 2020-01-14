@@ -1,5 +1,5 @@
 hpo_downloader
-=========================================================================================
+===========================================================================================================
 |travis| |sonar_quality| |sonar_maintainability| |codacy| |code_climate_maintainability| |pip| |downloads|
 
 Python package to download HPO annotations
@@ -58,8 +58,8 @@ The resulting dataframe will look like this:
 | A2MG\_HUMAN   | HP:0002185    |
 +---------------+---------------+
 
-The last version with all the mapping is available `here <https://raw.githubusercontent.com/LucaCappelletti94/hpo_downloader/master/phenotype_to_uniprot.tab>`_ in tab format.
-Similarly, the CAFA4 only mapping is available `here <https://raw.githubusercontent.com/LucaCappelletti94/hpo_downloader/master/phenotype_to_uniprot_cafa4_only.tab>`_ in tab format.
+The `last version with all the mapping is available here <https://raw.githubusercontent.com/LucaCappelletti94/hpo_downloader/master/phenotype_to_uniprot.tab>`_ in tab format.
+Similarly, `the CAFA4 only mapping is available here <https://raw.githubusercontent.com/LucaCappelletti94/hpo_downloader/master/phenotype_to_uniprot_cafa4_only.tab>`_ in tab format.
 
 **N.B.: CURRENTLY 55 gene IDs (1.28% of total) are not mapped by uniprot to curresponding uniprot IDs**
 
