@@ -22,3 +22,7 @@ def load_columns() -> List:
 
 def load_urls() -> Dict:
     return _load_data("urls")
+
+
+def load_paths() -> Dict:
+    return _load_data("paths")

@@ -30,7 +30,9 @@ To map the available HPO ids to Uniprot Ids (**when possible, not all geneIds us
 .. code:: python
 
     from hpo_downloader import map_phenotype_to_uniprot
-    phenotype_to_uniprot = map_phenotype_to_uniprot()
+    phenotype_to_uniprot = map_phenotype_to_uniprot(
+        cafa4_only=False # To not filter for uniprot_ids present only in CAFA4
+    )
 
 The resulting dataframe will look like this:
 

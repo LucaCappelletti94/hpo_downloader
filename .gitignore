@@ -17,3 +17,6 @@ __pycache__
 coverage.xml
 .ipynb_checkpoints
 .pytest_cache
+cafa4.tar.gz
+CAFA4-export
+Snippets.ipynb
