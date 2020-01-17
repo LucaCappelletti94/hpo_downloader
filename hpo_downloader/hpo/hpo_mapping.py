@@ -10,4 +10,12 @@ def hpo_mapping() -> pd.DataFrame:
     columns = df.columns[0].split(": ")[-1].split("<tab>")
     df = df.reset_index()
     df.columns = columns
+    df = df.drop(columns=[
+        "entrez-gene-symbol",
+        "HPO-Term-Name"
+    ])
+    df = df.rename(columns={
+        "entrez-gene-id": "gene_id",
+        "HPO-Term-ID": "hpo_id"
+    })
     return df

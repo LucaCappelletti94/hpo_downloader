@@ -43,7 +43,7 @@ extras = {
 setup(
     name='hpo_downloader',
     version=__version__,
-    description="Python package to download HPO annotations",
+    description="Python package to download HPO annotations and mapping to Uniprot ID and AC and CAFA4 IDs.",
     long_description=long_description,
     url="https://github.com/LucaCappelletti94/hpo_downloader",
     author="Luca Cappelletti",

@@ -3,7 +3,7 @@ hpo_downloader
 |travis| |sonar_quality| |sonar_maintainability| |codacy| |code_climate_maintainability| |pip| |downloads|
 
 Python package to download `HPO annotations <https://hpo.jax.org/app/download/annotation>`__
-and mapping to `Uniprod ID and AC <https://www.uniprot.org/>`__
+and mapping to `Uniprot ID and AC <https://www.uniprot.org/>`__
 and `CAFA4 IDs <https://www.biofunctionprediction.org/cafa/>`__.
 
 How do I install this package?

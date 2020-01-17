@@ -1,7 +1,11 @@
-from .hpo_downloader import map_phenotype_to_uniprot, get_phenotype_annotations, load_cafa4_uniprot_ids
+from .hpo import hpo_mapping
+from .cafa4 import cafa4_mapping
+from .uniprot import uniprot_mapping
+from .mapping import mapping
 
 __all__ = [
-    "map_phenotype_to_uniprot",
-    "get_phenotype_annotations",
-    "load_cafa4_uniprot_ids"
+    "hpo_mapping",
+    "cafa4_mapping",
+    "uniprot_mapping",
+    "mapping"
 ]
