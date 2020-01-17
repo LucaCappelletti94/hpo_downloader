@@ -18,11 +18,3 @@ def _load_data(file_name: str) -> Dict:
 
 def load_columns() -> List:
     return _load_data("columns")
-
-
-def load_urls() -> Dict:
-    return _load_data("urls")
-
-
-def load_paths() -> Dict:
-    return _load_data("paths")
