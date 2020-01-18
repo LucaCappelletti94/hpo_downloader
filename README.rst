@@ -28,6 +28,92 @@ The package pipeline is illustrated in the following image:
 
 |pipeline|
 
+Preprocessing
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+For the **pre-processing** you have to retrieve
+the `uniprot mapping files by asking directly to the Uniprot team <https://www.uniprot.org/contact>`__ 
+since each mapping is aroung 17GB.
+Let's save each file in a directory within this repository called :python:`"mapping/{month}/idmapping.dat.gz"`.
+
+**Cache for the pre-processing results is available within the python package, so there is no need to retrieve the original files unless you need to fully reproduce the pipeline.**
+
+For each release, we have to retrieve the :python:`"GeneID"` and the human uniprot_IDs, and we can do so using
+`zgrep <http://manpages.ubuntu.com/manpages/trusty/man1/zgrep.1.html>`__.
+
+.. code:: bash
+
+    zgrep "GeneID" mapping/{month}/idmapping.dat.gz > gene_id.tsv
+    zgrep "HUMAN" mapping/{month}/idmapping.dat.gz > human_id.tsv
+
+Now we have to map in a non-bijective way uniprot IDs to GeneIDs on the uniprot ACs.
+We can use the package method :python:`non_unique_mapping`.
+
+.. code:: python
+
+    from hpo_downloader.utils import non_unique_mapping
+    import pandas as pd
+
+    gene_id = pd.read_csv(
+        f"mapping/{month}/gene_id.tsv",
+        sep="\t",
+        header=None,
+        usecols=[0, 2]
+    )
+    gene_id.columns = ["uniprot_ac", "gene_id"]
+    human_id = pd.read_csv(
+        f"mapping/{month}/human_ids.tsv",
+        sep="\t",
+        header=None,
+        usecols=[0, 2]
+    )
+    human_id.columns = ["uniprot_ac", "uniprot_id"]
+    non_unique_mapping(gene_id, human_id, "uniprot_ac").to_csv(
+        f"hpo_downloader/uniprot/data/{month}.tsv.gz",
+        sep="\t",
+        index=False
+    )
+
+Package usage examples
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+To generate the complete mapping (optionally filtering only for Uniprot IDs within CAFA4) proceed as follows:
+
+.. code:: python
+
+    
+
+Author notes
+====================================
+
+HPO missing GeneID mappings
+------------------------------------
+Around 54 to 55 GeneID to Uniprot IDs mapping are currently missing in Uniprot.
+I have already signaled this to the Uniprot team and will update the package accordingly,
+if anything is to be made about these.
+
++----------+-----------------------------+--------------------------------+----------------------------+-------------------------------+
+| Month    |   HPO unique missed samples | HPO unique missed percentage   |   HPO total missed samples | HPO total missed percentage   |
++==========+=============================+================================+============================+===============================+
+| October  |                          54 | 1.26%                          |                       3076 | 1.86%                         |
++----------+-----------------------------+--------------------------------+----------------------------+-------------------------------+
+| November |                          55 | 1.28%                          |                       3162 | 1.91%                         |
++----------+-----------------------------+--------------------------------+----------------------------+-------------------------------+
+| December |                          55 | 1.28%                          |                       3162 | 1.91%                         |
++----------+-----------------------------+--------------------------------+----------------------------+-------------------------------+
+
+HPO phenotype ID to CAFA4 Uniprot_IDs missed mappings 
+------------------------------------------------------------
+A considerable percentage (around 80%) of the HUMAN uniprot IDs used in CAFA4
+are not mappable to the HPO phenotype IDs.
+
++----------+-------------------------------+----------------------------------+------------------------------+---------------------------------+
+| Month    |   CAFA4 unique missed samples | CAFA4 unique missed percentage   |   CAFA4 total missed samples | CAFA4 total missed percentage   |
++==========+===============================+==================================+==============================+=================================+
+| October  |                         16182 | 79.21%                           |                        16182 | 79.21%                          |
++----------+-------------------------------+----------------------------------+------------------------------+---------------------------------+
+| November |                         16184 | 79.22%                           |                        16184 | 79.22%                          |
++----------+-------------------------------+----------------------------------+------------------------------+---------------------------------+
+| December |                         16187 | 79.23%                           |                        16187 | 79.23%                          |
++----------+-------------------------------+----------------------------------+------------------------------+---------------------------------+
 
 .. |travis| image:: https://travis-ci.org/LucaCappelletti94/hpo_downloader.png
    :target: https://travis-ci.org/LucaCappelletti94/hpo_downloader
@@ -71,3 +157,6 @@ The package pipeline is illustrated in the following image:
 .. |code_climate_coverage| image:: https://api.codeclimate.com/v1/badges/0cac3687d5c9520e561a/test_coverage
     :target: https://codeclimate.com/github/LucaCappelletti94/hpo_downloader/test_coverage
     :alt: Code Climate Coverate
+
+.. role:: python(code)
+   :language: python
