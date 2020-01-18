@@ -29,8 +29,6 @@ The package pipeline is illustrated in the following image:
 
 |pipeline|
 
-.. role:: python(code)
-   :language: python
 
 Preprocessing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -39,14 +37,14 @@ For the **pre-processing** you have to retrieve the
 <https://www.uniprot.org/contact>`__
 since each mapping is aroung 17GB.
 Let's save each file in a directory within this repository called
-:python:`"mapping/{month}/idmapping.dat.gz"`.
+:code:`"mapping/{month}/idmapping.dat.gz"`.
 
 **Cache for the pre-processing results is available**
 **within the python package,**
 **so there is no need to retrieve the original**
 **files unless you need to fully reproduce the pipeline.**
 
-For each release, we have to retrieve the :python:`"GeneID"`
+For each release, we have to retrieve the :code:`"GeneID"`
 and the human uniprot_IDs, and we can do so using
 `zgrep <http://manpages.ubuntu.com/manpages/trusty/man1/zgrep.1.html>`__.
 
@@ -57,7 +55,7 @@ and the human uniprot_IDs, and we can do so using
 
 Now we have to map in a non-bijective way uniprot IDs
 to GeneIDs on the uniprot ACs.
-We can use the package method :python:`non_unique_mapping`.
+We can use the package method :code:`non_unique_mapping`.
 
 .. code:: python
 
