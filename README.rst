@@ -1,6 +1,7 @@
 hpo_downloader
 ===========================================================================================================
-|travis| |sonar_quality| |sonar_maintainability| |codacy| |code_climate_maintainability| |pip| |downloads|
+|travis| |sonar_quality| |sonar_maintainability| |codacy|
+|code_climate_maintainability| |pip| |downloads|
 
 Python package to download `HPO annotations <https://hpo.jax.org/app/download/annotation>`__
 and mapping to `Uniprot ID and AC <https://www.uniprot.org/>`__
@@ -30,14 +31,20 @@ The package pipeline is illustrated in the following image:
 
 Preprocessing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-For the **pre-processing** you have to retrieve
-the `uniprot mapping files by asking directly to the Uniprot team <https://www.uniprot.org/contact>`__ 
+For the **pre-processing** you have to retrieve the
+`uniprot mapping files by asking directly to the Uniprot team
+<https://www.uniprot.org/contact>`__
 since each mapping is aroung 17GB.
-Let's save each file in a directory within this repository called :python:`"mapping/{month}/idmapping.dat.gz"`.
+Let's save each file in a directory within this repository called
+:python:`"mapping/{month}/idmapping.dat.gz"`.
 
-**Cache for the pre-processing results is available within the python package, so there is no need to retrieve the original files unless you need to fully reproduce the pipeline.**
+**Cache for the pre-processing results is available**
+**within the python package,**
+**so there is no need to retrieve the original**
+**files unless you need to fully reproduce the pipeline.**
 
-For each release, we have to retrieve the :python:`"GeneID"` and the human uniprot_IDs, and we can do so using
+For each release, we have to retrieve the :python:`"GeneID"`
+and the human uniprot_IDs, and we can do so using
 `zgrep <http://manpages.ubuntu.com/manpages/trusty/man1/zgrep.1.html>`__.
 
 .. code:: bash
@@ -45,7 +52,8 @@ For each release, we have to retrieve the :python:`"GeneID"` and the human unipr
     zgrep "GeneID" mapping/{month}/idmapping.dat.gz > gene_id.tsv
     zgrep "HUMAN" mapping/{month}/idmapping.dat.gz > human_id.tsv
 
-Now we have to map in a non-bijective way uniprot IDs to GeneIDs on the uniprot ACs.
+Now we have to map in a non-bijective way uniprot IDs
+to GeneIDs on the uniprot ACs.
 We can use the package method :python:`non_unique_mapping`.
 
 .. code:: python
@@ -75,7 +83,8 @@ We can use the package method :python:`non_unique_mapping`.
 
 Package usage examples
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-To generate the complete mapping (optionally filtering only for Uniprot IDs within CAFA4) proceed as follows:
+To generate the complete mapping (optionally filtering only
+for Uniprot IDs within CAFA4) proceed as follows:
 
 .. code:: python
 
@@ -132,7 +141,8 @@ Author notes
 HPO missing GeneID mappings
 ------------------------------------
 Around 54 to 55 GeneID to Uniprot IDs mapping are currently missing in Uniprot.
-I have already signaled this to the Uniprot team and will update the package accordingly,
+I have already signaled this to the Uniprot team
+and will update the package accordingly,
 if anything is to be made about these.
 
 +----------+-----------------------------+--------------------------------+----------------------------+-------------------------------+
