@@ -29,6 +29,9 @@ The package pipeline is illustrated in the following image:
 
 |pipeline|
 
+.. role:: python(code)
+   :language: python
+
 Preprocessing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 For the **pre-processing** you have to retrieve the
@@ -212,6 +215,3 @@ are not mappable to the HPO phenotype IDs.
 .. |code_climate_coverage| image:: https://api.codeclimate.com/v1/badges/0cac3687d5c9520e561a/test_coverage
     :target: https://codeclimate.com/github/LucaCappelletti94/hpo_downloader/test_coverage
     :alt: Code Climate Coverate
-
-.. role:: python(code)
-   :language: python
