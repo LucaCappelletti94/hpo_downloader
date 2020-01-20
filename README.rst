@@ -147,10 +147,8 @@ Author notes
 
 HPO missing GeneID mappings
 ------------------------------------
-Around 54 to 55 GeneID to Uniprot IDs mapping are currently missing in Uniprot.
-I have already signaled this to the Uniprot team
-and will update the package accordingly,
-if anything is to be made about these.
+Around 54 to 55 GeneID to Uniprot IDs mapping are currently missing in Uniprot,
+but this is mainly because these genes code for RNA and not proteins.
 
 +----------+-----------------------------+--------------------------------+----------------------------+-------------------------------+
 | Month    |   HPO unique missed samples | HPO unique missed percentage   |   HPO total missed samples | HPO total missed percentage   |
