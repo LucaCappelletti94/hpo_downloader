@@ -123,9 +123,9 @@ look as follows:
 +-----------+------------+--------------+--------------+
 
 **HPO mappings (CAFA4 only):**
-`October (CAFA only) <https://github.com/LucaCappelletti94/hpo_downloader/raw/master/complete_mapping/october_cafa_only.tsv.tsv>`__,
-`November (CAFA only) <https://github.com/LucaCappelletti94/hpo_downloader/raw/master/complete_mapping/november_cafa_only.tsv.tsv>`__,
-`December (CAFA only) <https://github.com/LucaCappelletti94/hpo_downloader/raw/master/complete_mapping/december_cafa_only.tsv.tsv>`__
+`October (CAFA only) <https://github.com/LucaCappelletti94/hpo_downloader/raw/master/complete_mapping/october_cafa_only.tsv>`__,
+`November (CAFA only) <https://github.com/LucaCappelletti94/hpo_downloader/raw/master/complete_mapping/november_cafa_only.tsv>`__,
+`December (CAFA only) <https://github.com/LucaCappelletti94/hpo_downloader/raw/master/complete_mapping/december_cafa_only.tsv>`__
 
 +--------------+--------------+-----------+------------+--------------+
 | cafa4_id     | uniprot_id   |   gene_id | hpo_id     | uniprot_ac   |
