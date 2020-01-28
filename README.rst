@@ -104,9 +104,9 @@ The obtained `pandas DataFrames <https://pandas.pydata.org/pandas-docs/stable/re
 look as follows:
 
 **HPO mappings:**
-`October <https://github.com/LucaCappelletti94/hpo_downloader/raw/master/complete_mapping/october.tsv>`__,
-`November <https://github.com/LucaCappelletti94/hpo_downloader/raw/master/complete_mapping/november.tsv>`__,
-`December <https://github.com/LucaCappelletti94/hpo_downloader/raw/master/complete_mapping/december.tsv>`__
+`October <https://github.com/LucaCappelletti94/hpo_downloader/raw/master/complete_mapping/october.tsv.gz>`__,
+`November <https://github.com/LucaCappelletti94/hpo_downloader/raw/master/complete_mapping/november.tsv.gz>`__,
+`December <https://github.com/LucaCappelletti94/hpo_downloader/raw/master/complete_mapping/december.tsv.gz>`__
 
 +-----------+------------+--------------+--------------+
 |   gene_id | hpo_id     | uniprot_ac   | uniprot_id   |
@@ -123,9 +123,9 @@ look as follows:
 +-----------+------------+--------------+--------------+
 
 **HPO mappings (CAFA4 only):**
-`October (CAFA only) <https://github.com/LucaCappelletti94/hpo_downloader/raw/master/complete_mapping/october_cafa_only.tsv>`__,
-`November (CAFA only) <https://github.com/LucaCappelletti94/hpo_downloader/raw/master/complete_mapping/november_cafa_only.tsv>`__,
-`December (CAFA only) <https://github.com/LucaCappelletti94/hpo_downloader/raw/master/complete_mapping/december_cafa_only.tsv>`__
+`October (CAFA only) <https://github.com/LucaCappelletti94/hpo_downloader/raw/master/complete_mapping/october_cafa_only.tsv.gz>`__,
+`November (CAFA only) <https://github.com/LucaCappelletti94/hpo_downloader/raw/master/complete_mapping/november_cafa_only.tsv.gz>`__,
+`December (CAFA only) <https://github.com/LucaCappelletti94/hpo_downloader/raw/master/complete_mapping/december_cafa_only.tsv.gz>`__
 
 +--------------+--------------+-----------+------------+--------------+
 | cafa4_id     | uniprot_id   |   gene_id | hpo_id     | uniprot_ac   |
