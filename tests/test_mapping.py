@@ -12,9 +12,9 @@ def job(task: Dict):
     cafa4_only = task["cafa4_only"]
     mp_cafa = mapping(month, cafa4_only=cafa4_only)
     if cafa4_only:
-        path = f"complete_mapping/{month}_cafa_only.tsv"
+        path = f"complete_mapping/{month}_cafa_only.tsv.gz"
     else:
-        path = f"complete_mapping/{month}.tsv"
+        path = f"complete_mapping/{month}.tsv.gz"
     if not os.path.exists(path):
         mp_cafa.to_csv(path, index=False, sep="\t")
     pd.testing.assert_frame_equal(mp_cafa, pd.read_csv(path, sep="\t"))
