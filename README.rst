@@ -123,9 +123,9 @@ look as follows:
 +-----------+------------+--------------+--------------+
 
 **HPO mappings (CAFA4 only):**
-`October (CAFA only) <https://github.com/LucaCappelletti94/hpo_downloader/raw/master/complete_mapping/october_cafa_only.tsv.tsv>`__,
-`November (CAFA only) <https://github.com/LucaCappelletti94/hpo_downloader/raw/master/complete_mapping/november_cafa_only.tsv.tsv>`__,
-`December (CAFA only) <https://github.com/LucaCappelletti94/hpo_downloader/raw/master/complete_mapping/december_cafa_only.tsv.tsv>`__
+`October (CAFA only) <https://github.com/LucaCappelletti94/hpo_downloader/raw/master/complete_mapping/october_cafa_only.tsv>`__,
+`November (CAFA only) <https://github.com/LucaCappelletti94/hpo_downloader/raw/master/complete_mapping/november_cafa_only.tsv>`__,
+`December (CAFA only) <https://github.com/LucaCappelletti94/hpo_downloader/raw/master/complete_mapping/december_cafa_only.tsv>`__
 
 +--------------+--------------+-----------+------------+--------------+
 | cafa4_id     | uniprot_id   |   gene_id | hpo_id     | uniprot_ac   |
@@ -147,10 +147,8 @@ Author notes
 
 HPO missing GeneID mappings
 ------------------------------------
-Around 54 to 55 GeneID to Uniprot IDs mapping are currently missing in Uniprot.
-I have already signaled this to the Uniprot team
-and will update the package accordingly,
-if anything is to be made about these.
+Around 54 to 55 GeneID to Uniprot IDs mapping are currently missing in Uniprot,
+but this is mainly because these genes code for RNA and not proteins.
 
 +----------+-----------------------------+--------------------------------+----------------------------+-------------------------------+
 | Month    |   HPO unique missed samples | HPO unique missed percentage   |   HPO total missed samples | HPO total missed percentage   |
